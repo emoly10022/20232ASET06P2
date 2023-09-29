@@ -14,7 +14,8 @@ module.exports = {
     },
 
     calcularDescontoFaixa: function (faixa) {
-       
+        const totalFaixa = (faixa.fimFaixa - faixa.inicioFaixa) * faixa.aliquota;
+        return parseFloat(totalFaixa.toFixed(2));
     },
 
     calcularDescontoResidual: function (salarioBruto, faixaAnterior, faixaAtual) {
@@ -30,7 +31,7 @@ module.exports = {
         let descontoFaixas = [];
         let faixas = this.obterFaixas();
 
-        if(salarioBruto >= faixas[faixas.length -1].inicioFaixa){
+        if (salarioBruto >= faixas[faixas.length - 1].inicioFaixa) {
             return TETO_INSS;
         }
 

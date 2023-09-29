@@ -15,8 +15,13 @@ describe('[Encontrar aliquota IRRF]', () => {
     });
 });
 
-
 describe('[Calcular desconto IRRF]', () => {
-   
-    
+    test('deve calcular o desconto corretamente para o salário-base 2722.61', () => {
+        const salarioBase = 2722.61;
+        const descontoEsperado = 45.80;
+        const descontoCalculado = irrf.calculardesconto(salarioBase);
+        expect(descontoCalculado).toEqual(descontoEsperado);
+    });
 });
+
+;
